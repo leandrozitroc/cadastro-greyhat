@@ -1,0 +1,61 @@
+<%- include ('partials/header.ejs') %>
+<br>
+
+<body>
+    <div>
+    <%- include ('partials/navbar.ejs') %>
+    </div>
+    <div>
+        <div id="headerwrap-admin">
+            <div class="container">
+              <div class="row">
+                <div class="col-lg-6 col-lg-offset-3">
+                    
+                    <h1>GREYHAT - Admin - PAGE </h1>
+                    
+                  </div>
+                
+                
+              </div>
+            </div>
+            <!-- /container -->
+          </div>
+        
+    </div>
+    <br>
+    <br>
+    <hr>
+    <div class="container">
+        <% email.forEach(user1 =>{ %>
+            <table class="table table-striped table-dark">
+                <thead>
+                  <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">Name</th>
+                    <th scope="col">Common Name</th>
+                    <th scope="col">Email</th>
+                    <th scope="col">Delete</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <th scope="row"><%= user1.id %></th>
+                    <td><%= user1.nome %></td>
+                    <td><%= user1.sobrenome %></td>
+                    <td><%= user1.email %></td>
+                    <form method="POST" action="/delete"> 
+                        <input type="hidden" name="id" value = "<%= user1.id %>">
+                        <td> <button class="btn ntn-primary">Delete</button> </td>
+                    </form>
+                  </tr>
+           
+                </tbody>
+              </table>
+              
+              
+            
+        <% }) %>
+    </div>
+
+</body>
+<%- include ('partials/footer.ejs') %>

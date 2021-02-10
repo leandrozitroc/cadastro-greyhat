@@ -1,0 +1,37 @@
+<%- include ('partials/header.ejs') %>
+<br>
+
+<body>
+    <div>
+    <%- include ('partials/navbar.ejs') %>
+    </div>
+    <div>
+        <div id="headerwrap-admin">
+            <div class="container">
+              <div class="row">
+                <div class="col-lg-6 col-lg-offset-3">
+                    
+                    <h1>GREYHAT - Admin - PAGE </h1>
+                    
+                  </div>
+                
+                
+              </div>
+            </div>
+            <!-- /container -->
+          </div>
+        
+    </div>
+    <br>
+    <br>
+    <hr>
+
+    <div class="container">
+        <% logins.forEach(user1 =>{ %>
+            <ul class="list-group">
+                <a href="/users/<%= user1.id %>" class="list-group-item list-group-item-action">Nome: <%= user1.nome %> ||  Sobrenome: <%= user1.sobrenome %> || Email: <%= user1.email %></a>
+            </ul>   
+        <% }) %>
+    </div>>
+</body>
+<%- include ('partials/footer.ejs') %>
